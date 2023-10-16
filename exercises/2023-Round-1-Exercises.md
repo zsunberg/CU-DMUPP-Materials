@@ -176,3 +176,14 @@ The actor network learns to choose actions that maximize returns while exploring
 
 - Critic network
 The critic learns to predict the expected value of the return distribution.
+
+TD7
+===
+
+Q1: When using SALE embeddings, there is a state embedding $z^{s}$ and state-action embedding $z^{s,a}$ which are trained according to $L(f,g) = (z^{sa}-|z^{s'}|_{\times})^2$; what is the point of these two embeddings?
+
+A1: By training a state embedding and a state-action embedding such that the error between the state-action embedding and the state embedding of the next state are minimized, the encodings capture the transition dynamics. These embeddings provide additional information to help the state-action value and policy networks to 'predict' the effect of taking a particular action.
+
+Q2: What are the four components added to TD3 to comprise TD7? Which has the most impact on performance?
+
+A2: TD7 consists of TD3 + SALE, LAP, policy checkpoints, and behavior cloning (for offline RL). SALE is the single component with the largest impact on performance.
