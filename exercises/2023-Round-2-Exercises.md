@@ -99,3 +99,14 @@ A1: On-line TD(lambda) was given convergence criteria for the first time. It was
 Q2: Some of the algorithms in this paper were previously shown to converge. Given this, what was the reason their convergence was covered in this paper?
 
 A2: This paper introduced a general class of stochastic processes along with convergence criteria for these processes. Both Q-learning and TD(lambda) were shown to be special cases of this general class, and could be analyzed under the same framework.
+
+POMDP Complexity
+================
+
+Q1: What does it mean for a problem to be in Nick's Class (NC)?
+
+A1: Nick's Complexity class is the set of problems that can be solved in polylogarithmic time (O(log(n^c))) given n^k parallel computers for some constants c and k. Practically this means that the problem is efficiently parallelizable. NC is  a subset of P.
+
+Q2: What does it mean for a problem to be PSPACE-complete and why is it significant that solving POMDPs is PSPACE complete?
+
+A2: PSPACE is the set of problems that can be solved in polynomial amount of space of the size of the input. All problems in NP and P are assumed to subsets PSPACE. For a problem to be PSPACE complete it must be as hard as any problem in PSPACE. If a problem is PSPACE complete and one was able to come up with an a algorithm that required less than polynomial space then the entire complexity class would be collapsed. POMDPs being in PSPACE practically means that solving POMDPs is an extremally difficult problem, even more so than problems in NP which are notoriously hard. This explains why exactly solving POMDPs in intractable.
